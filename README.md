@@ -61,5 +61,9 @@ diagramas de flujo y pesuedocodigo (plantamiento utilizando lenguage natural)
 # Que es una variable?
   1. Posicion de memoria donde se almcacena un datos
   2. Se define:
-    1. Nombre para poder recuperar su valor
-    2. Tipo, esto restringe los valores que puede almacenar.
+    * Nombre para poder recuperar su valor
+    *  Tipo, esto restringe los valores que puede almacenar.
+###Difrencia fundamental entre las estructuras Do-While y Whiles
+  Do-While ejecuta las instrucciones al menos una primera vez sin evaluar la condicion
+
+  While evaluea siempre la condicion antes de ejecutar las instrucciones, por lo tanto tambien es necesario defenir el valor de la condicion.
