@@ -44,17 +44,33 @@ def linearSearch(a, v):
 
 def arrayAddition(a, b):
     c = a.copy()
+    print('Array A:', a)
+    print('Array B:', b)
     if(len(a) > len(b)):
         for i in range(len(b)):
-            c[i] = a[i] + b[i]
+            c[i] += b[i]
     elif(len(a) == len(b)):
         for i in range(len(a)):
-            c[i] = a[i] + b[i]
+            c[i] += b[i]
     else:
         c = b.copy()
         for i in range(len(a)):
-            c[i] = a[i] + b[i]
+            c[i] += a[i]
     print(c)
+
+def insertionSortBreakDown(a):
+    whileCounter = 0
+    for j in range(1, len(a)):
+        print('Value of J:', j)
+        key = a[j]
+        i = j - 1
+        while(i >= 0 and a[i] > key):
+            a[i + 1] = a[i]
+            i = i - 1
+            print('Value of while-counter:', whileCounter)
+            whileCounter += 1
+        a[i + 1] = key
+
 #Exercises
 #2.1 -1
 print("Exercies 2.1-1")
@@ -72,3 +88,6 @@ print()
 print("Exercies 2.1-4")
 arrayAddition(a, c)
 print()
+
+print('insertion breakdown')
+insertionSortBreakDown(a)
