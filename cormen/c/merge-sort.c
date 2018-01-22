@@ -1,12 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include "arrayfunc.h"
 
-void printArray(int *A, int size) {
-    int i;
-    for (i=0; i < size; i++)
-      printf("%d ", A[i]);
-    printf("\n");
-}
 
 void merge(int * arr, int p, int q, int r) {
   int i, j, k;
@@ -22,7 +17,7 @@ void merge(int * arr, int p, int q, int r) {
 
   i = j = 0;
   k = p;
-  
+
   do {
     if(left[i] <= right[j]){
       arr[k] = left[i++];
