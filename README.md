@@ -67,3 +67,16 @@ diagramas de flujo y pesuedocodigo (plantamiento utilizando lenguage natural)
   Do-While ejecuta las instrucciones al menos una primera vez sin evaluar la condicion
 
   While evaluea siempre la condicion antes de ejecutar las instrucciones, por lo tanto tambien es necesario defenir el valor de la condicion.
+
+###Que es heap?
+
+  Es un array visualizado como un arbol binario 'casi' completo.
+
+###Propiedad max-heap
+
+  El indeces de un nodo es >= a los indices de sus hijos
+
+#Operaciones heap
+  Build_max_heap: genera un max heap de un array sin clasificar.
+
+  max_heapify: Corrige un sola error de la propiedad heap, ubicado en la ruta de un sub-arbo

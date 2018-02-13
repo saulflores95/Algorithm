@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <limits.h>
 #include "arrayfunc.h"
 
 
@@ -9,7 +10,7 @@ void merge(int * arr, int p, int q, int r) {
   int n2 = r - q;
   int left[n1 + 1], right[n2 + 1];
 
-  left[n1] = right[n2] = 999999;
+  left[n1] = right[n2] = INT_MAX;
   for(i = 0; i < n1; i++)
    left[i] = arr[p + i];
   for(j = 0; j < n2; j++)
