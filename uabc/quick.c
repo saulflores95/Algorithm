@@ -8,40 +8,26 @@ void printArray(int *A, int size) {
 }
 
 int dividir(int arr[], int inicio, int fin) {
-  int valor, puntoDivision, der, izq, tmp;
-  puntoDivision = inicio;
-  valor = arr[inicio];
-  der = inicio + 1;
-  izq = fin;
-  while(der < izq){
-    while(arr[der] <= valor && (der < izq))
-      der++;
-    if((der == izq) && arr[der] <= valor)
-      der++;
-    while((der < izq) && arr[izq] > valor)
-      izq--;
-    if((der==izq) && (arr[izq] > valor))
-      izq--;
-    if(der < izq) {
-      tmp = arr[izq];
-      arr[izq] = arr[der];
-      arr[der] = tmp;
-      der++;
-      izq--;
+  int valor = arr[fin];
+  int i = inicio - 1;
+  int j, tmp;
+  for (j = inicio; j < fin; j++)
+    if(arr[j] <= valor) {
+      i++;
+      tmp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = tmp;
     }
-  }
-  tmp = arr[inicio];
-  arr[inicio] = arr[izq];
-  arr[izq] = tmp;
-  puntoDivision = izq;
-  return puntoDivision;
+  tmp = arr[i+1];
+  arr[i+1] = arr[fin];
+  arr[fin] = tmp;
+  return i++;
 }
 
 void ord_rapido(int arr[], int inicio, int fin) {
   int punto_div;
   if(inicio < fin) {
     punto_div = dividir(arr, inicio, fin);
-    printf("%d\n", punto_div);
     ord_rapido(arr, inicio, punto_div - 1);
     ord_rapido(arr, punto_div + 1, fin);
   }
